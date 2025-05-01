@@ -139,6 +139,7 @@ console.log(reverseWord(userPrompt));
 console.log(reversedPrompt);
 
 //Inverser une chaîne de caractères avec uen boucle for : Écris une fonction qui Inverse les lettres d’un mot. Ex: "chat" => "tahc"
+
 const titleMovie2 = "Le seigneur des anneaux";
 
 function reverseString2(str) {
