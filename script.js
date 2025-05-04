@@ -15,7 +15,7 @@ function findMaximum(array) {
 //Trouver le plus petit nombre dans un tableau : Écris une fonction qui prend un tableau d'entiers et retourne le plus petit nombre. Si le tableau est vide, retourne null.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const minNumber = findMinimum(numbersList);
+const minNumber = findMinimum(numbers);
 
 console.log("The smallest number:", minNumber);
 
@@ -63,12 +63,12 @@ function findMax(array) {
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-console.log("The smallest number:", findMin(numbersList));
+console.log("The smallest number:", findMin(numbers));
 
 function findMin(array) {
   let minNumber = array[0];
   for (let i = 1; i < array.length; i++) {
-    if (array[i] < min) {
+    if (array[i] < minNumber) {
       minNumber = array[i];
     }
   }
@@ -205,21 +205,21 @@ function reverseString(string) {
 
 // Compter les caractères dans une chaîne : Écris une fonction qui retourne le nombre de chaque caractère.
 
-const letters = ["a", "b", "c", "b", "e", "e", "c", "b"];
+const alphabet = ["a", "b", "c", "b", "e", "e", "c", "b"];
 
-console.log(countLetters(letters));
+console.log(countChars(alphabet));
 
-function countLetters(array) {
-  const numberOfLetters = {};
+function countChars(array) {
+  const numberOfChars = {};
 
-  array.forEach((letter) => {
-    if (numberOfLetters[letter]) {
-      numberOfLetters[letter] = numberOfLetters[letter] + 1;
+  array.forEach((element) => {
+    if (numberOfChars[element]) {
+      numberOfChars[element] = numberOfChars[element] + 1;
     } else {
-      numberOfLetters[letter] = 1;
+      numberOfChars[element] = 1;
     }
   });
-  return numberOfLetters;
+  return numberOfChars;
 }
 
 // Compter les caractères uniques dans une chaîne : Écris une fonction qui retourne le nombre de caractères uniques dans une chaîne.
@@ -260,9 +260,9 @@ const letters = ["a", "b", "c", "b", "e"];
 console.log(countOccurrences(letters));
 
 function countOccurrences(array) {
-  return array.reduce((acc, value) => {
-    acc[value] = (acc[value] || 0) + 1;
-    return acc;
+  return array.reduce((accumulator, value) => {
+    accumulator[value] = (accumulator[value] || 0) + 1;
+    return accumulator;
   }, {});
 }
 
@@ -273,18 +273,22 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 console.log(countEvenNumbers(numbers));
 
 function countEvenNumbers(array) {
-  return array.filter((n) => n % 2 === 0).length;
+  return array.filter((nb) => nb % 2 === 0).length;
 }
 
 // Trouver combien de nombres pairs il y a dans un tableau avec une boucle for : Écris une fonction qui calcule combien de nombres pairs il y a dans un tableau d'entiers.
 
-function countEvenNumbersWithLoop(arr) {
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log("Total count of even numbers: ", countEvenNumbersWithLoop(numbers));
+
+function countEvenNumbersWithLoop(array) {
   let sum = 0;
   let evenNumbers = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0) {
       sum += 1;
-      evenNumbers.push(arr[i]);
+      evenNumbers.push(array[i]);
     }
   }
   console.log("Even numbers: ", evenNumbers);
@@ -292,84 +296,126 @@ function countEvenNumbersWithLoop(arr) {
   return sum;
 }
 
-console.log(
-  "Total count of even numbers: ",
-  countEvenNumbersWithLoop([1, 2, 3, 4, 6])
-);
-
 // Trouver la somme des nombres pairs dans un tableau : Écris une fonction qui calcule la somme de tous les nombres pairs dans un tableau d'entiers.
 
-const numbersList = [1, 2, 4, 6, 3, 5, 2, 7, 8, 5, 9, 5, 6, 7, 4, 3];
-console.log(calculateSumOfEvenNumbers(numbersList));
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function calculateSumOfEvenNumbers(arr) {
-  const sumOfEvenNumbers = arr
-    .filter((elm) => elm % 2 === 0)
-    .reduce((accumulator, elm) => accumulator + elm, 0);
+console.log(calculateSumOfEvenNumbers(numbers));
+
+function calculateSumOfEvenNumbers(array) {
+  const sumOfEvenNumbers = array
+    .filter((element) => element % 2 === 0)
+    .reduce((accumulator, element) => accumulator + element, 0);
   return sumOfEvenNumbers;
 }
 
 // Trouver la somme des nombres pairs dans un tableau avec une boucle for : Écris une fonction qui calcule la somme de tous les nombres pairs dans un tableau d'entiers.
 
-const numbersList = [1, 2, 4, 6, 3, 5, 2, 7, 8, 5, 9, 5, 6, 7, 4, 3];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function calculateSumOfEvenNumbersWithLoop(arr) {
+console.log(
+  "Sum of even numbers: ",
+  calculateSumOfEvenNumbersWithLoop(numbers)
+);
+
+function calculateSumOfEvenNumbersWithLoop(array) {
   let sum = 0;
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0) {
-      sum += arr[i];
+    if (array[i] % 2 === 0) {
+      sum += array[i];
     }
   }
   return sum;
 }
 
-console.log(
-  "Sum of even numbers: ",
-  calculateSumOfEvenNumbersWithLoop(numbersList)
-);
-
 // Trouver tous les nombres pairs et les classer par ordre décroissant : Écris une fonction qui retourne un tableau de nombres pairs triés du plus grand au plus petit.
 
-const numbersList = [1, 2, 4, 6, 3, 5, 2, 7, 8, 5, 9, 5, 6, 7, 4, 3];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function getEvenNumbersSortedDescending(arr) {
-  const evenNumbers = arr.filter((num) => num % 2 === 0).sort((a, b) => b - a);
+console.log(getEvenNumbersSortedDescending(numbers));
+
+function getEvenNumbersSortedDescending(array) {
+  const evenNumbers = array
+    .filter((element) => element % 2 === 0)
+    .sort((a, b) => b - a);
   return [...new Set(evenNumbers)];
 }
 
-console.log(getEvenNumbersSortedDescending(numbersList));
-
 // Vérifier si un nombre est premier : Écris une fonction qui vérifie si un nombre est un nombre premier.
 
-const numbersList = [1, 2, 4, 6, 3, 5, 2, 7, 8, 5, 9, 5, 6, 7, 4, 3];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function isPrime(number) {
-  if (number <= 1) {
-    console.log(`${number} is not a prime number`);
+numbers.forEach((element) => isPrime(element));
+
+function isPrime(nb) {
+  if (nb <= 1) {
+    console.log(`${nb} is not a prime number`);
     return false;
   }
 
-  for (let j = 2; j < number; j++) {
-    if (number % j === 0) {
-      console.log(`${number} is not a prime number`);
+  for (let j = 2; j < nb; j++) {
+    if (nb % j === 0) {
+      console.log(`${nb} is not a prime number`);
       return false;
     }
   }
 
-  console.log(`${number} is a prime number`);
+  console.log(`${nb} is a prime number`);
   return true;
 }
 
-numbersList.forEach((nb) => isPrime(nb));
+//Trouver le nombre le plus proche de zéro : Écris une fonction qui prend un tableau de nombre et retourne le nombre le plus proche de zéro
+
+const numbers = [7, -2, 3, -1, 5];
+
+console.log(closestToZero(numbers)); // Résultat : -1
+
+function closestToZero(array) {
+  if (array.length === 0) return null; // Si le tableau est vide, on retourne null
+
+  let closest = array[0]; // On part du premier élément comme référence
+
+  for (let i = 1; i < array.length; i++) {
+    const current = array[i];
+
+    // Si la valeur absolue du nombre courant est plus petite que celle du "closest"
+    // OU s'il est égal en valeur absolue mais positif, on le choisit
+    if (
+      Math.abs(current) < Math.abs(closest) ||
+      (Math.abs(current) === Math.abs(closest) && current > closest)
+    ) {
+      closest = current;
+    }
+  }
+
+  return closest;
+}
 
 // Compter les voyelles dans une chaîne : Écris une fonction qui retourne le nombre de voyelles dans une chaîne (a, e, i, o, u, y).
 
-const string = "Le Seigneurs des Anneaux";
+const titleMovie = "The Lord of the Rings";
+const numberOfVowels = countVowels(titleMovie);
 
-function countVowels(str) {
+console.log(numberOfVowels);
+
+function countVowels(string) {
+  const vowelsSet = "aeiouy";
+  return [...string.toLowerCase()].filter((element) =>
+    vowelsSet.includes(element)
+  ).length;
+}
+
+// Compter les voyelles dans une chaîne avec une boucle for : Écris une fonction qui retourne le nombre de voyelles dans une chaîne (a, e, i, o, u, y).
+
+const titleMovie = "The Lord of the Rings";
+const numberOfVowels = countVowels(titleMovie);
+
+console.log(numberOfVowels);
+
+function countVowels(string) {
   const vowelsSet = "aeiouyAEIOUY";
   let count = 0;
-  const cleanedString = str.replace(/\s+/g, "").toLowerCase().split("");
+  const cleanedString = string.replace(/\s+/g, "").split("");
   for (let i = 0; i < cleanedString.length; i++) {
     if (vowelsSet.includes(cleanedString[i])) {
       count++;
@@ -378,27 +424,46 @@ function countVowels(str) {
   return count;
 }
 
-const numberOfVowels = countVowels("aeiouyAEIOUY", string);
+// Compter les voyelles dans une chaîne avec une boucle for of : Écris une fonction qui retourne le nombre de voyelles dans une chaîne (a, e, i, o, u, y).
+
+const titleMovie = "The Lord of the Rings";
+const numberOfVowels = countVowels(titleMovie);
+
 console.log(numberOfVowels);
+
+function countVowels(string) {
+  const vowelsSet = "aeiouy";
+  let count = 0;
+  for (const char of string.toLowerCase()) {
+    if (vowelsSet.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
 
 // Trouver le mot le plus long dans une chaîne : Écris une fonction qui retourne le mot avec le plus grand nombre de caractères.
 
-const string = "le seigneur des anneaux";
+const titleMovie = "The Lord of the Rings";
 
-function findLongestWord(str) {
-  const words = str.split(" ");
-  let longestWord = words[0];
-  for (let i = 1; i < words.length; i++) {
-    if (words[i].length > longestWord.length) {
-      longestWord = words[i];
+console.log(findLongestWord(titleMovie));
+
+function findLongestWord(string) {
+  const splitedwWords = string.split(" ");
+  let longestWord = splitedwWords[0];
+  for (let i = 1; i < splitedwWords.length; i++) {
+    if (splitedwWords[i].length > longestWord.length) {
+      longestWord = splitedwWords[i];
     }
   }
   return longestWord;
 }
 
-console.log(findLongestWord(string));
-
 // Vérifier une anagramme : Écris une fonction qui vérifie si deux mots sont des anagrammes. Deux mots sont des anagrammes s’ils contiennent exactement les mêmes lettres, mais dans un ordre différent.
+
+console.log(checkAnagram("listen", "silent"));
+console.log(checkAnagram("Paris", "piras"));
+console.log(checkAnagram("hello", "world"));
 
 function checkAnagram(word1, word2) {
   let cleanedWord1 = word1.toLowerCase().replace(/\s/g, "");
@@ -421,37 +486,36 @@ function checkAnagram(word1, word2) {
   }
 }
 
+// Vérifier une anagramme avec une boucle for : Écris une fonction qui vérifie si deux mots sont des anagrammes. Deux mots sont des anagrammes s’ils contiennent exactement les mêmes lettres, mais dans un ordre différent.
+
 console.log(checkAnagram("listen", "silent"));
 console.log(checkAnagram("Paris", "piras"));
 console.log(checkAnagram("hello", "world"));
 
-// Vérifier une anagramme avec une boucle for : Écris une fonction qui vérifie si deux mots sont des anagrammes. Deux mots sont des anagrammes s’ils contiennent exactement les mêmes lettres, mais dans un ordre différent.
-
-function checkAnagram(str1, str2) {
-  if (str1.length !== str2.length) {
-    console.log(`${str1} and ${str2} are not Anagrams`);
+function checkAnagram(word1, word2) {
+  if (word1.length !== word2.length) {
+    console.log(`${word1} and ${word2} are not Anagrams`);
     return false;
   }
 
-  let str2Copy = str2;
+  let word2Copy = word2;
 
-  for (let i = 0; i < str1.length; i++) {
-    if (str2Copy.includes(str1[i])) {
-      str2Copy = str2Copy.replace(str1[i], "");
+  for (let i = 0; i < word1.length; i++) {
+    if (word2Copy.includes(word1[i])) {
+      word2Copy = word2Copy.replace(word1[i], "");
     } else {
-      console.log(`${str1} and ${str2} are not Anagrams`);
+      console.log(`${word1} and ${word2} are not Anagrams`);
       return false;
     }
   }
-  console.log(`${str1} and ${str2} are Anagrams`);
+  console.log(`${word1} and ${word2} are Anagrams`);
   return true;
 }
 
-console.log(checkAnagram("listen", "silent"));
-console.log(checkAnagram("Paris", "piras"));
-console.log(checkAnagram("hello", "world"));
-
 // Détecter si un tableau est trié : Écris une fonction qui retourne true si les éléments d’un tableau sont dans l’ordre croissant ou décroissant.
+
+console.log(isSorted([1, 2, 3, 4, 5]));
+console.log(isSorted([5, 4, 3, 2, 1]));
 
 function isSorted(array) {
   let isAscending = true;
@@ -468,7 +532,3 @@ function isSorted(array) {
 
   return isAscending || isDescending;
 }
-
-console.log(isSorted([1, 2, 3, 4, 5]));
-console.log(isSorted([5, 4, 3, 2, 1]));
-console.log(isSorted([1, 3, 2, 5, 4]));
