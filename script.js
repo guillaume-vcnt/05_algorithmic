@@ -1,113 +1,158 @@
 //Trouver le plus grand nombre dans un tableau : Écris une fonction qui prend un tableau d'entiers et retourne le plus grand nombre. Si le tableau est vide, retourne null.
 
-const numbersList = [1, 4, 7, 5, 8, 3, 6, 9, 2, 5];
-const maxNumber = findMaximum(numbersList);
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const maxNumber = findMaximum(numbers);
+
 console.log("The largest number:", maxNumber);
 
-function findMaximum(arr) {
-  if (arr.length === 0) {
+function findMaximum(array) {
+  if (array.length === 0) {
     return null;
   }
-  return Math.max(...arr);
+  return Math.max(...array);
 }
 
 //Trouver le plus petit nombre dans un tableau : Écris une fonction qui prend un tableau d'entiers et retourne le plus petit nombre. Si le tableau est vide, retourne null.
 
-const numbersList = [1, 4, 7, 5, 8, 3, 6, 9, 2, 5];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const minNumber = findMinimum(numbersList);
+
 console.log("The smallest number:", minNumber);
 
-function findMinimum(arr) {
-  if (arr.length === 0) {
+function findMinimum(array) {
+  if (array.length === 0) {
     return null;
   }
-  return Math.min(...arr);
+  return Math.min(...array);
 }
 
 // Trouver le plus petit et le plus grand nombre dans un tableau : Écris une fonction qui retourne le plus petit et le plus grand nombre d’un tableau.
 
-const numbersList = [1, 4, 7, 5, 8, 3, 6, 9, 2, 5];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sortedNumbers = [...numbers].sort((a, b) => a - b);
 
-const sortedNumbers = [...numbersList].sort((a, b) => a - b);
-console.log("Original:", numbersList);
+console.log("Original:", numbers);
 console.log("Sorted:", sortedNumbers);
+console.log(findMinMax(sortedNumbers));
 
-function findMinMax(arr) {
-  const minNumber = arr[0];
-  const maxNumber = arr[arr.length - 1];
-  return console.log("Min:", minNumber), console.log("Max:", maxNumber);
+function findMinMax(array) {
+  const minNumber = array[0];
+  const maxNumber = array[array.length - 1];
+  console.log(minNumber);
+  console.log(maxNumber);
+  return { min: minNumber, max: maxNumber };
 }
-
-findMinMax(sortedNumbers);
 
 // Trouver le plus grand nombre dans un tableau avec une boucle for : Écris une fonction qui prend un tableau d'entiers et retourne le plus grand nombre.
 
-const numbersList = [1, 4, 7, 5, 8, 3, 6, 9, 2, 5];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function findMax(arr) {
-  let max = arr[0];
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
+console.log("The largest number:", findMax(numbers));
+
+function findMax(array) {
+  let maxNumber = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] > maxNumber) {
+      maxNumber = array[i];
     }
   }
-  return max;
+  return maxNumber;
 }
-
-console.log("Le plus grand nombre est :", findMax(numbersList));
 
 // Trouver le plus petit nombre dans un tableau avec une boucle for : Écris une fonction qui prend un tableau d'entiers et retourne le plus petit nombre.
 
-const numbersList = [1, 4, 7, 5, 8, 3, 6, 9, 2, 5];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function findMin(arr) {
-  let min = arr[0];
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] < min) {
-      min = arr[i];
+console.log("The smallest number:", findMin(numbersList));
+
+function findMin(array) {
+  let minNumber = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] < min) {
+      minNumber = array[i];
     }
   }
-  return min;
+  return minNumber;
 }
-
-console.log("Le plus petit nombre est :", findMin(numbersList));
 
 // Supprimer les doublons d’un tableau : Écris une fonction qui retourne un tableau sans doublons.
 
-const numbersList = [1, 4, 7, 5, 8, 3, 6, 9, 2, 5];
-const newListNumber = removeDuplicates(numbersList);
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const newArrayNumbers = removeDuplicates(numbers);
 
-function removeDuplicates(arr) {
-  const uniqueValues = new Set(arr);
+console.log(newArrayNumbers);
+
+function removeDuplicates(array) {
+  const uniqueValues = new Set(array);
   return [...uniqueValues];
 }
 
-console.log(newListNumber);
+// Supprimer les doublons d’un objet : Écris une fonction qui retourne un objet sans doublons.
 
-// Vérifier si une chaîne est un palindrome : Écris une fonction qui vérifie si une chaîne de caractères est un palindrome (c'est-à-dire qu'elle se lit de la même manière de gauche à droite et de droite à gauche) et retourne true si c’est un palindrome, false sinon.
+const uniqueCharacters = removeDuplicateObjects(characters);
 
-const wordsList = ["kayak", "banana", "New York"];
-const testingWords = wordsList.forEach((elm) => isPalindrome(elm));
-console.log(testingWords);
+console.log(uniqueCharacters);
+
+const characters = [
+  { name: "Frodon" },
+  { name: "Sam" },
+  { name: "Gandalf" },
+  { name: "Frodon" },
+  { name: "Aragorn" },
+];
+
+function removeDuplicateObjects(array) {
+  const seen = new Set();
+  return array.filter((item) => {
+    if (seen.has(item.name)) {
+      return false;
+    } else {
+      seen.add(item.name);
+      return true;
+    }
+  });
+}
+
+// Vérifier si une chaîne de caractères est un palindrome : Écris une fonction qui vérifie si une chaîne de caractères est un palindrome (c'est-à-dire qu'elle se lit de la même manière de gauche à droite et de droite à gauche).
+
+const words = ["kayak", "banana", "New York"];
+const testingWord = words.forEach((element) => isPalindrome(element));
 
 function isPalindrome(word) {
   const reversed = word.split("").reverse().join("");
   console.log(`Reversed Word: ${reversed}`);
+
   if (reversed === word) {
     console.log(`${word} is a palindrome`);
-    return true;
   } else {
     console.log(`${word} is not a palindrome`);
   }
-  return false;
+}
+
+// Vérifier si une chaîne de caractères est un palindrome : Écris une fonction qui vérifie si une chaîne de caractères est un palindrome (c'est-à-dire qu'elle se lit de la même manière de gauche à droite et de droite à gauche) et retourne true si c’est un palindrome, false sinon.
+
+const words = ["kayak", "banana", "New York"];
+const testingWord = words.map((element) => isPalindrome(element));
+
+console.log(testingWord);
+
+function isPalindrome(word) {
+  const reversed = word.split("").reverse().join("");
+
+  if (reversed === word) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // Inverser un tableau :
 // Écris une fonction qui inverse l'ordre des éléments dans un tableau sans modifier le tableau d'origine.
 
-const fruitslist = ["apple", "strawberry", "orange", "kiwi", "banana"];
-console.log("Original:", fruitslist);
-console.log("Reversed:", reverseArray(fruitslist));
+const fruits = ["apple", "strawberry", "orange", "kiwi", "banana"];
+
+console.log("Original:", fruits);
+console.log("Reversed:", reverseArray(fruits));
 
 function reverseArray(fruit) {
   const reversedFruits = [...fruit].reverse();
@@ -116,12 +161,13 @@ function reverseArray(fruit) {
 
 // Inverser un tableau avec une boucle for : Écris une fonction qui inverse l'ordre des éléments dans un tableau sans modifier le tableau d'origine.
 
-const fruitslist = ["apple", "strawberry", "orange", "kiwi", "banana"];
-console.log("Reversed2:", reverseArray(fruitslist));
+const fruits = ["apple", "strawberry", "orange", "kiwi", "banana"];
+
+console.log("Reversed2:", reverseArray(fruits));
 
 function reverseArray(fruit) {
   const reversedFruits = [];
-  for (let i = f.length - 1; i >= 0; i--) {
+  for (let i = fruit.length - 1; i >= 0; i--) {
     reversedFruits.push(fruit[i]);
   }
   return reversedFruits;
@@ -129,46 +175,44 @@ function reverseArray(fruit) {
 
 // Inverser une chaîne de caractères : Écris une fonction qui inverse les lettres d’un mot. Ex: "chat" => "tahc"
 
-let string = "Husky";
-let reversedString = [];
+const dogBreed = "Husky";
 
-function reverseWord(str) {
-  const reversedStr = str.split("").reverse().join("");
-  reversedWord.push(reversedStr);
-  return reversedStr;
+console.log(reverseString(dogBreed));
+
+function reverseString(string) {
+  const reversedString = string.split("").reverse().join("");
+  return reversedString;
 }
-
-console.log(reverseWord(string));
-console.log(reversedString);
 
 // Inverser une chaîne de caractères avec une boucle for : Écris une fonction qui inverse les lettres d’un mot. Ex: "cat" => "tac"
 
-const string = "The Lord of the Rings";
+const dogBreed = "Husky";
 
-function reverseString(str) {
-  if (typeof str === "string") {
+console.log(reverseString(dogBreed));
+
+function reverseString(string) {
+  if (typeof string === "string") {
     console.log("is string");
   } else {
     throw new Error("is not a string");
   }
-  let reversedStr = [];
-  for (let i = str.length - 1; i >= 0; i--) {
-    reversedStr.push(str[i]);
+  let reversedString = [];
+  for (let i = string.length - 1; i >= 0; i--) {
+    reversedString.push(string[i]);
   }
-  return reversedStr.join("");
+  return reversedString.join("");
 }
-
-console.log(reverseString(string));
 
 // Compter les caractères dans une chaîne : Écris une fonction qui retourne le nombre de chaque caractère.
 
 const letters = ["a", "b", "c", "b", "e", "e", "c", "b"];
+
 console.log(countLetters(letters));
 
-function countLetters(arr) {
+function countLetters(array) {
   const numberOfLetters = {};
 
-  arr.forEach((letter) => {
+  array.forEach((letter) => {
     if (numberOfLetters[letter]) {
       numberOfLetters[letter] = numberOfLetters[letter] + 1;
     } else {
@@ -180,17 +224,18 @@ function countLetters(arr) {
 
 // Compter les caractères uniques dans une chaîne : Écris une fonction qui retourne le nombre de caractères uniques dans une chaîne.
 
-const string = "Jaws";
+const titleMovie = "The Lord of the Rings";
+
 console.log("Number of unique characters:", uniqueChar(string));
 
-function uniqueChar(str) {
+function uniqueChar(string) {
   const unique = [];
-  const cleaned = str.replace(/\s+/g, "");
-  const splitedTitle = cleaned.split("");
-  console.log(splitedTitle);
-  for (let i = 0; i < splitedTitle.length; i++) {
-    if (!unique.includes(splitedTitle[i])) {
-      unique.push(splitedTitle[i]);
+  const cleaned = string.replace(/\s+/g, "");
+  const splitedString = cleaned.split("");
+  console.log(splitedString);
+  for (let i = 0; i < splitedString.length; i++) {
+    if (!unique.includes(splitedString[i])) {
+      unique.push(splitedString[i]);
     }
   }
   console.log("Unique characters:", unique);
@@ -199,32 +244,37 @@ function uniqueChar(str) {
 
 // Compter le nombre unique dans un tableau : Écris une fonction qui retourne combien de nombres uniques il y a dans un tableau.
 
-const numbersList = [1, 4, 7, 5, 8, 3, 6, 9, 2, 5];
-console.log(uniqueNumbersCount(numbersList));
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function uniqueNumbersCount(arr) {
-  const unique = new Set(arr);
+console.log(uniqueNumbersCount(numbers));
+
+function uniqueNumbersCount(array) {
+  const unique = new Set(array);
   return unique.size;
 }
 
 // Compter le nombre de fois que chaque valeur apparaît dans un tableau : Écris une fonction qui retourne combien de fois chaque valeur apparaît dans le tableau.
 
-function countOccurrences(arr) {
-  return arr.reduce((acc, value) => {
+const letters = ["a", "b", "c", "b", "e"];
+
+console.log(countOccurrences(letters));
+
+function countOccurrences(array) {
+  return array.reduce((acc, value) => {
     acc[value] = (acc[value] || 0) + 1;
     return acc;
   }, {});
 }
 
-console.log(countOccurrences(["a", "b", "c", "b", "e"])); // { a: 1, b: 2, c: 1, e: 1 }
-
 // Trouver combien de nombres pairs il y a dans un tableau : Écris une fonction qui calcule combien de nombres pairs il y a dans un tableau d'entiers.
 
-function countEvenNumbers(arr) {
-  return arr.filter((n) => n % 2 === 0).length;
-}
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-console.log(countEvenNumbers([1, 2, 3, 4, 6]));
+console.log(countEvenNumbers(numbers));
+
+function countEvenNumbers(array) {
+  return array.filter((n) => n % 2 === 0).length;
+}
 
 // Trouver combien de nombres pairs il y a dans un tableau avec une boucle for : Écris une fonction qui calcule combien de nombres pairs il y a dans un tableau d'entiers.
 
@@ -422,21 +472,3 @@ function isSorted(array) {
 console.log(isSorted([1, 2, 3, 4, 5]));
 console.log(isSorted([5, 4, 3, 2, 1]));
 console.log(isSorted([1, 3, 2, 5, 4]));
-
-//Trier un tableau de nombres : Écris une fonction sortNumbers(arr) qui prend un tableau d’entiers et retourne un tableau trié par ordre croissant.
-
-//Exemple :
-sortNumbers([5, 3, 8, 2, 9]); // [2, 3, 5, 8, 9]
-sortNumbers([10, 4, 7, 1, 3]); // [1, 3, 4, 7, 10]
-
-//Trier un tableau de nombres : Écris une fonction sortNumbers(arr) qui prend un tableau d’entiers et retourne un tableau trié par ordre decroissant.
-
-//Exemple :
-sortNumbers([5, 3, 8, 2, 9]); // [2, 3, 5, 8, 9]
-sortNumbers([10, 4, 7, 1, 3]); // [1, 3, 4, 7, 10]
-
-//Vérifier si un tableau a un total égal à un nombre donné : Écris une fonction hasTotal(arr, total) qui prend un tableau de nombres et un total, et qui retourne true si la somme des éléments du tableau est égale au total, sinon false.
-
-//Exemple :
-hasTotal([1, 2, 3, 4], 10); // true (1 + 2 + 3 + 4 = 10)
-hasTotal([1, 2, 3], 10); // false (1 + 2 + 3 = 6)
