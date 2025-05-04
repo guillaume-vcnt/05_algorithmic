@@ -146,8 +146,7 @@ function isPalindrome(word) {
   }
 }
 
-// Inverser un tableau :
-// Écris une fonction qui inverse l'ordre des éléments dans un tableau sans modifier le tableau d'origine.
+// Inverser un tableau : Écris une fonction qui inverse l'ordre des éléments dans un tableau sans modifier le tableau d'origine.
 
 const fruits = ["apple", "strawberry", "orange", "kiwi", "banana"];
 
