@@ -1,4 +1,4 @@
-//Trouver le plus grand nombre dans un tableau : Écris une fonction qui prend un tableau d'entiers et retourne le plus grand nombre. Si le tableau est vide, retourne null.
+//1 - Trouver le plus grand nombre dans un tableau : Écris une fonction qui prend un tableau d'entiers et retourne le plus grand nombre. Si le tableau est vide, retourne null.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const maxNumber = findMaximum(numbers);
@@ -12,7 +12,7 @@ function findMaximum(array) {
   return Math.max(...array);
 }
 
-//Trouver le plus petit nombre dans un tableau : Écris une fonction qui prend un tableau d'entiers et retourne le plus petit nombre. Si le tableau est vide, retourne null.
+//2 - Trouver le plus petit nombre dans un tableau : Écris une fonction qui prend un tableau d'entiers et retourne le plus petit nombre. Si le tableau est vide, retourne null.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const minNumber = findMinimum(numbers);
@@ -26,7 +26,7 @@ function findMinimum(array) {
   return Math.min(...array);
 }
 
-// Trouver le plus petit et le plus grand nombre dans un tableau : Écris une fonction qui retourne le plus petit et le plus grand nombre d’un tableau.
+//3 - Trouver le plus petit et le plus grand nombre dans un tableau : Écris une fonction qui retourne le plus petit et le plus grand nombre d’un tableau.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const sortedNumbers = [...numbers].sort((a, b) => a - b);
@@ -43,7 +43,7 @@ function findMinMax(array) {
   return { min: minNumber, max: maxNumber };
 }
 
-// Trouver le plus grand nombre dans un tableau avec une boucle for : Écris une fonction qui prend un tableau d'entiers et retourne le plus grand nombre.
+//4 - Trouver le plus grand nombre dans un tableau avec une boucle for : Écris une fonction qui prend un tableau d'entiers et retourne le plus grand nombre.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -59,7 +59,7 @@ function findMax(array) {
   return maxNumber;
 }
 
-// Trouver le plus petit nombre dans un tableau avec une boucle for : Écris une fonction qui prend un tableau d'entiers et retourne le plus petit nombre.
+//5 - Trouver le plus petit nombre dans un tableau avec une boucle for : Écris une fonction qui prend un tableau d'entiers et retourne le plus petit nombre.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -75,7 +75,7 @@ function findMin(array) {
   return minNumber;
 }
 
-// Supprimer les doublons d’un tableau : Écris une fonction qui retourne un tableau sans doublons.
+//6 - Supprimer les doublons d’un tableau : Écris une fonction qui retourne un tableau sans doublons.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const newArrayNumbers = removeDuplicates(numbers);
@@ -87,7 +87,7 @@ function removeDuplicates(array) {
   return [...uniqueValues];
 }
 
-// Supprimer les doublons d’un objet : Écris une fonction qui retourne un objet sans doublons.
+//7 - Supprimer les doublons d’un objet : Écris une fonction qui retourne un objet sans doublons.
 
 const uniqueCharacters = removeDuplicateObjects(characters);
 
@@ -113,7 +113,7 @@ function removeDuplicateObjects(array) {
   });
 }
 
-// Vérifier si une chaîne de caractères est un palindrome : Écris une fonction qui vérifie si une chaîne de caractères est un palindrome (c'est-à-dire qu'elle se lit de la même manière de gauche à droite et de droite à gauche).
+//8 - Vérifier si une chaîne de caractères est un palindrome : Écris une fonction qui vérifie si une chaîne de caractères est un palindrome (c'est-à-dire qu'elle se lit de la même manière de gauche à droite et de droite à gauche).
 
 const words = ["kayak", "banana", "New York"];
 const testingWord = words.forEach((element) => isPalindrome(element));
@@ -129,7 +129,7 @@ function isPalindrome(word) {
   }
 }
 
-// Vérifier si une chaîne de caractères est un palindrome : Écris une fonction qui vérifie si une chaîne de caractères est un palindrome (c'est-à-dire qu'elle se lit de la même manière de gauche à droite et de droite à gauche) et retourne true si c’est un palindrome, false sinon.
+//9 - Vérifier si une chaîne de caractères est un palindrome : Écris une fonction qui vérifie si une chaîne de caractères est un palindrome (c'est-à-dire qu'elle se lit de la même manière de gauche à droite et de droite à gauche) et retourne true si c’est un palindrome, false sinon.
 
 const words = ["kayak", "banana", "New York"];
 const testingWord = words.map((element) => isPalindrome(element));
@@ -146,7 +146,7 @@ function isPalindrome(word) {
   }
 }
 
-// Inverser un tableau : Écris une fonction qui inverse l'ordre des éléments dans un tableau sans modifier le tableau d'origine.
+//10 - Inverser un tableau : Écris une fonction qui inverse l'ordre des éléments dans un tableau sans modifier le tableau d'origine.
 
 const fruits = ["apple", "strawberry", "orange", "kiwi", "banana"];
 
@@ -158,7 +158,7 @@ function reverseArray(fruit) {
   return reversedFruits;
 }
 
-// Inverser un tableau avec une boucle for : Écris une fonction qui inverse l'ordre des éléments dans un tableau sans modifier le tableau d'origine.
+//11 - Inverser un tableau avec une boucle for : Écris une fonction qui inverse l'ordre des éléments dans un tableau sans modifier le tableau d'origine.
 
 const fruits = ["apple", "strawberry", "orange", "kiwi", "banana"];
 
@@ -172,7 +172,7 @@ function reverseArray(fruit) {
   return reversedFruits;
 }
 
-// Inverser une chaîne de caractères : Écris une fonction qui inverse les lettres d’un mot. Ex: "chat" => "tahc"
+//12 - Inverser une chaîne de caractères : Écris une fonction qui inverse les lettres d’un mot. Ex: "chat" => "tahc"
 
 const dogBreed = "Husky";
 
@@ -183,7 +183,7 @@ function reverseString(string) {
   return reversedString;
 }
 
-// Inverser une chaîne de caractères avec une boucle for : Écris une fonction qui inverse les lettres d’un mot. Ex: "cat" => "tac"
+//13 - Inverser une chaîne de caractères avec une boucle for : Écris une fonction qui inverse les lettres d’un mot. Ex: "cat" => "tac"
 
 const dogBreed = "Husky";
 
@@ -202,7 +202,7 @@ function reverseString(string) {
   return reversedString.join("");
 }
 
-// Compter les caractères dans une chaîne : Écris une fonction qui retourne le nombre de chaque caractère.
+//14 - Compter les caractères dans une chaîne : Écris une fonction qui retourne le nombre de chaque caractère.
 
 const alphabet = ["a", "b", "c", "b", "e", "e", "c", "b"];
 
@@ -221,7 +221,7 @@ function countChars(array) {
   return numberOfChars;
 }
 
-// Compter les caractères uniques dans une chaîne : Écris une fonction qui retourne le nombre de caractères uniques dans une chaîne.
+//15 - Compter les caractères uniques dans une chaîne : Écris une fonction qui retourne le nombre de caractères uniques dans une chaîne.
 
 const titleMovie = "The Lord of the Rings";
 
@@ -241,7 +241,7 @@ function uniqueChar(string) {
   return unique.length;
 }
 
-// Compter le nombre unique dans un tableau : Écris une fonction qui retourne combien de nombres uniques il y a dans un tableau.
+//16 - Compter le nombre unique dans un tableau : Écris une fonction qui retourne combien de nombres uniques il y a dans un tableau.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -252,7 +252,7 @@ function uniqueNumbersCount(array) {
   return unique.size;
 }
 
-// Compter le nombre de fois que chaque valeur apparaît dans un tableau : Écris une fonction qui retourne combien de fois chaque valeur apparaît dans le tableau.
+//17 - Compter le nombre de fois que chaque valeur apparaît dans un tableau : Écris une fonction qui retourne combien de fois chaque valeur apparaît dans le tableau.
 
 const letters = ["a", "b", "c", "b", "e"];
 
@@ -265,7 +265,7 @@ function countOccurrences(array) {
   }, {});
 }
 
-// Trouver combien de nombres pairs il y a dans un tableau : Écris une fonction qui calcule combien de nombres pairs il y a dans un tableau d'entiers.
+//18 - Trouver combien de nombres pairs il y a dans un tableau : Écris une fonction qui calcule combien de nombres pairs il y a dans un tableau d'entiers.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -275,7 +275,7 @@ function countEvenNumbers(array) {
   return array.filter((nb) => nb % 2 === 0).length;
 }
 
-// Trouver combien de nombres pairs il y a dans un tableau avec une boucle for : Écris une fonction qui calcule combien de nombres pairs il y a dans un tableau d'entiers.
+//19 - Trouver combien de nombres pairs il y a dans un tableau avec une boucle for : Écris une fonction qui calcule combien de nombres pairs il y a dans un tableau d'entiers.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -295,7 +295,7 @@ function countEvenNumbersWithLoop(array) {
   return sum;
 }
 
-// Trouver la somme des nombres pairs dans un tableau : Écris une fonction qui calcule la somme de tous les nombres pairs dans un tableau d'entiers.
+//20 - Trouver la somme des nombres pairs dans un tableau : Écris une fonction qui calcule la somme de tous les nombres pairs dans un tableau d'entiers.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -308,7 +308,7 @@ function calculateSumOfEvenNumbers(array) {
   return sumOfEvenNumbers;
 }
 
-// Trouver la somme des nombres pairs dans un tableau avec une boucle for : Écris une fonction qui calcule la somme de tous les nombres pairs dans un tableau d'entiers.
+//21 - Trouver la somme des nombres pairs dans un tableau avec une boucle for : Écris une fonction qui calcule la somme de tous les nombres pairs dans un tableau d'entiers.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -327,7 +327,7 @@ function calculateSumOfEvenNumbersWithLoop(array) {
   return sum;
 }
 
-// Trouver tous les nombres pairs et les classer par ordre décroissant : Écris une fonction qui retourne un tableau de nombres pairs triés du plus grand au plus petit.
+//22 - Trouver tous les nombres pairs et les classer par ordre décroissant : Écris une fonction qui retourne un tableau de nombres pairs triés du plus grand au plus petit.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -340,7 +340,7 @@ function getEvenNumbersSortedDescending(array) {
   return [...new Set(evenNumbers)];
 }
 
-// Vérifier si un nombre est premier : Écris une fonction qui vérifie si un nombre est un nombre premier.
+//23 - Vérifier si un nombre est premier : Écris une fonction qui vérifie si un nombre est un nombre premier.
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -363,7 +363,7 @@ function isPrime(nb) {
   return true;
 }
 
-//Trouver le nombre le plus proche de zéro : Écris une fonction qui prend un tableau de nombre et retourne le nombre le plus proche de zéro
+//24 - Trouver le nombre le plus proche de zéro : Écris une fonction qui prend un tableau de nombre et retourne le nombre le plus proche de zéro
 
 const numbers = [7, -2, 3, -1, 5];
 
@@ -390,7 +390,7 @@ function closestToZero(array) {
   return closest;
 }
 
-// Compter les voyelles dans une chaîne : Écris une fonction qui retourne le nombre de voyelles dans une chaîne (a, e, i, o, u, y).
+//25 - Compter les voyelles dans une chaîne : Écris une fonction qui retourne le nombre de voyelles dans une chaîne (a, e, i, o, u, y).
 
 const titleMovie = "The Lord of the Rings";
 const numberOfVowels = countVowels(titleMovie);
@@ -404,7 +404,7 @@ function countVowels(string) {
   ).length;
 }
 
-// Compter les voyelles dans une chaîne avec une boucle for : Écris une fonction qui retourne le nombre de voyelles dans une chaîne (a, e, i, o, u, y).
+//26 - Compter les voyelles dans une chaîne avec une boucle for : Écris une fonction qui retourne le nombre de voyelles dans une chaîne (a, e, i, o, u, y).
 
 const titleMovie = "The Lord of the Rings";
 const numberOfVowels = countVowels(titleMovie);
@@ -423,7 +423,7 @@ function countVowels(string) {
   return count;
 }
 
-// Compter les voyelles dans une chaîne avec une boucle for of : Écris une fonction qui retourne le nombre de voyelles dans une chaîne (a, e, i, o, u, y).
+//27 - Compter les voyelles dans une chaîne avec une boucle for of : Écris une fonction qui retourne le nombre de voyelles dans une chaîne (a, e, i, o, u, y).
 
 const titleMovie = "The Lord of the Rings";
 const numberOfVowels = countVowels(titleMovie);
@@ -441,7 +441,7 @@ function countVowels(string) {
   return count;
 }
 
-// Trouver le mot le plus long dans une chaîne : Écris une fonction qui retourne le mot avec le plus grand nombre de caractères.
+//28 - Trouver le mot le plus long dans une chaîne : Écris une fonction qui retourne le mot avec le plus grand nombre de caractères.
 
 const titleMovie = "The Lord of the Rings";
 
@@ -458,7 +458,7 @@ function findLongestWord(string) {
   return longestWord;
 }
 
-// Vérifier une anagramme : Écris une fonction qui vérifie si deux mots sont des anagrammes. Deux mots sont des anagrammes s’ils contiennent exactement les mêmes lettres, mais dans un ordre différent.
+//29 - Vérifier une anagramme : Écris une fonction qui vérifie si deux mots sont des anagrammes. Deux mots sont des anagrammes s’ils contiennent exactement les mêmes lettres, mais dans un ordre différent.
 
 console.log(checkAnagram("listen", "silent"));
 console.log(checkAnagram("Paris", "piras"));
@@ -485,7 +485,7 @@ function checkAnagram(word1, word2) {
   }
 }
 
-// Vérifier une anagramme avec une boucle for : Écris une fonction qui vérifie si deux mots sont des anagrammes. Deux mots sont des anagrammes s’ils contiennent exactement les mêmes lettres, mais dans un ordre différent.
+//30 - Vérifier une anagramme avec une boucle for : Écris une fonction qui vérifie si deux mots sont des anagrammes. Deux mots sont des anagrammes s’ils contiennent exactement les mêmes lettres, mais dans un ordre différent.
 
 console.log(checkAnagram("listen", "silent"));
 console.log(checkAnagram("Paris", "piras"));
@@ -511,7 +511,7 @@ function checkAnagram(word1, word2) {
   return true;
 }
 
-// Détecter si un tableau est trié : Écris une fonction qui retourne true si les éléments d’un tableau sont dans l’ordre croissant ou décroissant.
+//31 - Détecter si un tableau est trié : Écris une fonction qui retourne true si les éléments d’un tableau sont dans l’ordre croissant ou décroissant.
 
 console.log(isSorted([1, 2, 3, 4, 5]));
 console.log(isSorted([5, 4, 3, 2, 1]));
@@ -530,4 +530,36 @@ function isSorted(array) {
   }
 
   return isAscending || isDescending;
+}
+
+//32 - Modifier un tableau existant : Écris une fonction updatearray qui prend deux tableaux en paramètre et retourne un nouveau tableau sans doublons.
+// - Conserve les éléments présents dans les deux tableaux
+// - Remplace les éléments de tableau b qui n'existent pas dans tableau a par "delete.{element}"
+// - ajoute "add.{element}" pour chaque élément de tableau a absent de tableau b
+
+const fruitsa = ["banana", "apple", "Strawberry", "Kiwi", "Orange"];
+const fruitsb = ["banana", "apple", "Kiwi", "Kiwi", "Pineapple"];
+
+console.log(updatearray(fruitsa, fruitsb));
+
+function updatearray(a, b) {
+  b = array.from(new Set(b));
+
+  let updatedFruits = [];
+
+  for (let fruit of b) {
+    if (!a.includes(fruit)) {
+      updatedFruits.push(`delete.${fruit}`);
+    } else {
+      updatedFruits.push(fruit);
+    }
+  }
+
+  for (let fruit of a) {
+    if (!updatedFruits.includes(fruit)) {
+      updatedFruits.push(`add.${fruit}`);
+    }
+  }
+
+  return updatedFruits;
 }
