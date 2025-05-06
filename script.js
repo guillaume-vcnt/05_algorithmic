@@ -543,7 +543,7 @@ const fruitsb = ["banana", "apple", "Kiwi", "Kiwi", "Pineapple"];
 console.log(updatearray(fruitsa, fruitsb));
 
 function updatearray(a, b) {
-  b = array.from(new Set(b));
+  b = Array.from(new Set(b));
 
   let updatedFruits = [];
 
