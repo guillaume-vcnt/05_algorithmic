@@ -537,10 +537,10 @@ function isSorted(array) {
 // - Remplace les éléments de tableau b qui n'existent pas dans tableau a par "delete.{element}"
 // - ajoute "add.{element}" pour chaque élément de tableau a absent de tableau b
 
-const fruitsa = ["banana", "apple", "Strawberry", "Kiwi", "Orange"];
-const fruitsb = ["banana", "apple", "Kiwi", "Kiwi", "Pineapple"];
+const fruitsA = ["banana", "apple", "Strawberry", "Kiwi", "Orange"];
+const fruitsB = ["banana", "apple", "Kiwi", "Kiwi", "Pineapple"];
 
-console.log(updatearray(fruitsa, fruitsb));
+console.log(updatearray(fruitsA, fruitsB));
 
 function updatearray(a, b) {
   b = Array.from(new Set(b));
