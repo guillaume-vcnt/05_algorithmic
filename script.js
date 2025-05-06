@@ -367,27 +367,16 @@ function isPrime(nb) {
 
 const numbers = [7, -2, 3, -1, 5];
 
-console.log(closestToZero(numbers)); // Résultat : -1
+console.log(closestToZero(numbers));
 
 function closestToZero(array) {
-  if (array.length === 0) return null; // Si le tableau est vide, on retourne null
-
-  let closest = array[0]; // On part du premier élément comme référence
-
+  let closestValue = array[0];
   for (let i = 1; i < array.length; i++) {
-    const current = array[i];
-
-    // Si la valeur absolue du nombre courant est plus petite que celle du "closest"
-    // OU s'il est égal en valeur absolue mais positif, on le choisit
-    if (
-      Math.abs(current) < Math.abs(closest) ||
-      (Math.abs(current) === Math.abs(closest) && current > closest)
-    ) {
-      closest = current;
+    if (Math.abs(array[i]) < Math.abs(closestValue)) {
+      closestValue = array[i];
     }
   }
-
-  return closest;
+  return closestValue;
 }
 
 //25 - Compter les voyelles dans une chaîne : Écris une fonction qui retourne le nombre de voyelles dans une chaîne (a, e, i, o, u, y).
