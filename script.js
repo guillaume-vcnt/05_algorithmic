@@ -532,34 +532,43 @@ function isSorted(array) {
   return isAscending || isDescending;
 }
 
-//32 - Modifier un tableau existant : Écris une fonction updatearray qui prend deux tableaux en paramètre et retourne un nouveau tableau sans doublons.
+//32 - Modifier un tableau existant : Écris une fonction updateArray qui prend deux tableaux en paramètre et retourne un nouveau tableau.
 // - Conserve les éléments présents dans les deux tableaux
-// - Remplace les éléments de tableau b qui n'existent pas dans tableau a par "delete.{element}"
-// - ajoute "add.{element}" pour chaque élément de tableau a absent de tableau b
+// - Remplace les éléments du tableau B qui n'existent pas dans le tableau A par "delete.{element}"
+// - Ajoute "add.{element}" pour chaque élément du tableau A absent de tableau B
+// - Ajoute "duplicate.{element}" pour chaque doublons du tableau B
+// Exemple : ["banana", "apple", "Kiwi", "duplicate.Kiwi", "delete.Pineapple", "add.Strawberry", "add.Orange"]
 
 const fruitsA = ["banana", "apple", "Strawberry", "Kiwi", "Orange"];
 const fruitsB = ["banana", "apple", "Kiwi", "Kiwi", "Pineapple"];
 
-console.log(updatearray(fruitsA, fruitsB));
+updateArray(fruitsA, fruitsB);
 
-function updatearray(a, b) {
-  b = Array.from(new Set(b));
-
-  let updatedFruits = [];
+function updateArray(a, b) {
+  let newArray = [];
+  let seenFruit = [];
 
   for (let fruit of b) {
     if (!a.includes(fruit)) {
-      updatedFruits.push(`delete.${fruit}`);
-    } else {
-      updatedFruits.push(fruit);
+      newArray.push(`delete.${fruit}`);
+    } else if (a.includes(fruit)) {
+      newArray.push(fruit);
     }
   }
 
   for (let fruit of a) {
-    if (!updatedFruits.includes(fruit)) {
-      updatedFruits.push(`add.${fruit}`);
+    if (!b.includes(fruit)) {
+      newArray.push(`add.${fruit}`);
     }
   }
 
-  return updatedFruits;
+  for (let i = 0; i < newArray.length; i++) {
+    if (seenFruit.includes(newArray[i])) {
+      newArray[i] = `duplicate.${newArray[i]}`;
+    } else {
+      seenFruit.push(newArray[i]);
+    }
+  }
+
+  console.log(newArray);
 }
