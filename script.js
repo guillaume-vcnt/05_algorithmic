@@ -561,3 +561,58 @@ function updateArray(a, b) {
 
   console.log(newArray);
 }
+
+//33 - Détecter les pics et creux dans un tableau : Ecris une fonction capable d'identifier les pics et les creux dans un tableau de nombres. Un pic est un élément du tableau qui est strictement supérieur à ses deux voisins (l'élément avant et l'élément après). Un creux est un élément du tableau qui est strictement inférieur à ses deux voisins.
+//Un pic doit être au moins 5 unités supérieur à ses deux voisins et un creux doit être au moins 5 unités inférieur à ses deux voisins.
+// Le tableau doit contenir au minimum 3 valeurs pour pouvoir comparer un élément à ses deux voisins. Si ce n’est pas le cas, la fonction doit retourner 0.
+
+const numbersA = [10, 18, 4, 17, 6, 16, 2, 15, 4, 14, 3, 16, 2, 18, 8];
+const numbersB = [5, 12, 9, 14, 8, 13, 7, 16, 4, 15, 9, 14, 3, 13, 10];
+const numbersC = [0];
+
+findPeaks(numbersA);
+findPeaks(numbersB);
+findPeaks(numbersC);
+
+function findPeaks(array) {
+  // Vérification de la longueur du tableau
+  if (array.length < 3) {
+    console.log("Error : Array must contain at least 3 elements.");
+    return 0;
+  }
+
+  let highPeak = [];
+  let lowPeak = [];
+
+  // Identification des pics
+  for (let i = 1; i < array.length - 1; i++) {
+    if (array[i] > array[i - 1] + 4 && array[i] > array[i + 1] + 4) {
+      highPeak.push(array[i]);
+    }
+  }
+
+  // Identification des creux
+  for (let j = 1; j < array.length - 1; j++) {
+    if (array[j] < array[j - 1] - 4 && array[j] < array[j + 1] - 4) {
+      lowPeak.push(array[j]);
+    }
+  }
+
+  // Affichage des résultats pour les pics
+  if (highPeak.length === 0) {
+    console.log("No peaks found.");
+  } else {
+    console.log(`Peak value(s) : ${highPeak}`);
+    console.log(`Number of peak value(s) : ${highPeak.length}`);
+  }
+
+  // Affichage des résultats pour les creux
+  if (lowPeak.length === 0) {
+    console.log("No low found.");
+  } else {
+    console.log(`Low value(s) : ${lowPeak}`);
+    console.log(`Number of low value(s) : ${lowPeak.length}`);
+  }
+
+  console.log("\n ========== \n");
+}
