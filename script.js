@@ -102,12 +102,12 @@ const characters = [
 ];
 
 function removeDuplicateObjects(array) {
-  const seen = new Set();
+  const seenItem = new Set();
   return array.filter((item) => {
-    if (seen.has(item.name)) {
+    if (seenItem.has(item.name)) {
       return false;
     } else {
-      seen.add(item.name);
+      seenItem.add(item.name);
       return true;
     }
   });
