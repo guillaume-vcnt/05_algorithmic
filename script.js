@@ -605,3 +605,59 @@ function findPeaks(array) {
 
   console.log("\n ========== \n");
 }
+
+//24 - Une chaîne est un isogramme si aucune lettre ne se répète : Écris une fonction isIsogram(str) qui retourne true si c'est le cas, sinon false.
+
+console.log(isIsogram("Luthien")); // true
+console.log(isIsogram("Aragorn")); // fals
+
+function isIsogram(str) {
+  const lowerStr = str.toLowerCase();
+  return new Set(lowerStr).size === lowerStr.length;
+}
+
+// 25 - Dans un tableau d'entiers où tous les nombres sont identiques sauf un, retrouve celui qui est différent : Écris une fonction findIntruder qui retourne l'intrus ou null s'il n'y en a pas.
+
+console.log(findIntruder([1, 1, 1, 2, 1, 1]));
+console.log(findIntruder([1, 1, 1, 1, 1, 1]));
+console.log(findIntruder([0, 0, 0.55, 0, 0]));
+console.log(findIntruder([0, 5]));
+console.log(findIntruder([]));
+
+function findIntruder(array) {
+  if (array.length === 0 || array.length < 3) return null;
+
+  const sameValues = new Set(array);
+
+  if (sameValues.size < 2) return null;
+
+  const referenceValue = array[0];
+  const matchingValues = [];
+  const differentValues = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === referenceValue) {
+      matchingValues.push(array[i]);
+    } else {
+      differentValues.push(array[i]);
+    }
+  }
+
+  if (matchingValues.length < differentValues.length) {
+    return matchingValues[0];
+  } else {
+    return differentValues[0];
+  }
+}
+
+// 26 - Trouve la somme des deux plus petits entiers dans un tableau : Écris une fonction findSumOfTwoSmallestNumbers qui retourne la somme des deux plus petits nombres d'un tableau. Retourne null si le tableau contient moins de deux éléments.
+
+console.log(findSumOfTwoSmallestNumbers([5, 12, 8, 19, 22]));
+
+function findSumOfTwoSmallestNumbers(numbers) {
+  if (numbers.length < 2) {
+    return null;
+  }
+  const sortedNumbers = numbers.sort((a, b) => a - b);
+  return sortedNumbers[0] + sortedNumbers[1];
+}
